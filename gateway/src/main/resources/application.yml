@@ -1,0 +1,18 @@
+server:
+  port: 9000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: demo-api
+          uri: lb://demo-api
+          predicates:
+            - Path=/demos/**
