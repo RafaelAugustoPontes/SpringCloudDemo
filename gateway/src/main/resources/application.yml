@@ -16,3 +16,7 @@ spring:
           uri: lb://demo-api
           predicates:
             - Path=/demos/**
+        - id: demo-inventory
+          uri: lb://demo-inventory
+          predicates:
+            - Path=/inventories/**
